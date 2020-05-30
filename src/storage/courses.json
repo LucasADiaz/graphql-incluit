@@ -1,0 +1,36 @@
+[{
+        "id": 1,
+        "name": "Primero A",
+        "description": "Primer Año, curso A"
+    },
+    {
+        "id": 2,
+        "name": "Segundo A",
+        "description": "Segundo Año, Curso A"
+    },
+    {
+        "id": 3,
+        "name": "Tercero A",
+        "description": "Tercer Año, Curso A"
+    },
+    {
+        "id": 4,
+        "name": "Primero B",
+        "description": "Primer Año, Curso B"
+    },
+    {
+        "id": 5,
+        "name": "Segundo B",
+        "description": "Segundo Año, Curso B"
+    },
+    {
+        "id": 6,
+        "name": "Tercero B",
+        "description": "Tercer Año, Curso B"
+    },
+    {
+        "id": 7,
+        "name": "Primero C",
+        "description": "primer Año, Curso C"
+    }
+]
