@@ -259,14 +259,14 @@ const RootMutationType = new GraphQLObjectType({
             resolve: (parent, args) => {
                 let gradeDeleted = false;
 
-                students.map(grade => {
-                    if (args.id === grade.id) {
+                grades.map(grade => {
+                    if (grade.id === args.id) {
                         gradeDeleted = true;
                     }
                 });
                 console.log(gradeDeleted);
 
-                if (gradeDeleted == true) {
+                if (gradeDeleted) {
                     _.remove(grades, grade => grade.id === args.id);
                 } else {
                     throw new Error(`do not exist a grade whit that id ${args.id}`);
