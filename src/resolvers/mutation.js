@@ -230,16 +230,16 @@ const RootMutationType = new GraphQLObjectType({
                 id: { type: GraphQLInt }
             },
             resolve: (parent, args) => {
-                const grade = grades.find(grade => grade.courseId === args.id);
-                let courseDeleted = false;
+                const grade = grades.find(grade => grade.studentId === args.id);
+                let studentDeleted = false;
 
                 if (!grade) {
                     students.map(student => {
                         if (args.id === student.id) {
-                            courseDeleted = true;
+                            studentDeleted = true;
                         }
                     });
-                    if (courseDeleted == true) {
+                    if (studentDeleted == true) {
                         _.remove(students, student => student.id === args.id);
                     } else {
                         throw new Error(`do not exist a student whit that id ${args.id}`);
@@ -257,20 +257,21 @@ const RootMutationType = new GraphQLObjectType({
                 id: { type: GraphQLInt }
             },
             resolve: (parent, args) => {
-                let courseDeleted = false;
+                let gradeDeleted = false;
 
-                students.map(student => {
-                    if (args.id === student.id) {
-                        courseDeleted = true;
+                students.map(grade => {
+                    if (args.id === grade.id) {
+                        gradeDeleted = true;
                     }
                 });
-                if (courseDeleted == true) {
+                console.log(gradeDeleted);
+
+                if (gradeDeleted == true) {
                     _.remove(grades, grade => grade.id === args.id);
                 } else {
                     throw new Error(`do not exist a grade whit that id ${args.id}`);
                 }
                 return grades;
-
             }
         }
     })
